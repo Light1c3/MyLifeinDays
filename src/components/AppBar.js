@@ -23,7 +23,7 @@ class AppBarComp extends React.Component {
       <div>
         <AppBar
           onLeftIconButtonTouchTap={this.handleToggle}
-          title="How long have you been alive?"
+          title="Time Visualizer"
           iconClassNameRight="muidocs-icon-navigation-expand-more" />
         <Drawer
           docked={false}
