@@ -23,17 +23,16 @@ class AppBarComp extends React.Component {
       <div>
         <AppBar
           onLeftIconButtonTouchTap={this.handleToggle}
-          onLeftIconButtonClick={this.handleToggle}
           title="How long have you been alive?"
           iconClassNameRight="muidocs-icon-navigation-expand-more" />
         <Drawer
           docked={false}
-          width={200}
+          width={250}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onTouchTap={this.handleClose}>Menu Item 1</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>Settings</MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>About</MenuItem>
         </Drawer>
       </div>
   </MuiThemeProvider>
