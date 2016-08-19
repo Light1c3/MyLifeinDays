@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import VisualizeDays from './components/VisualizeDays';
 import DatePicker from './components/DatePicker';
 import AppBar from './components/AppBar';
+
 import './App.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -15,7 +16,8 @@ class App extends Component {
     super();
     this.state = {
       startDate: moment(),
-      dateDiff: 0
+      dateDiff1: 0,
+      dateDiff2: 0
     };
   }
 
@@ -23,29 +25,48 @@ class App extends Component {
     var daySelected = moment(date);
     this.setState({
       startDate: daySelected,
-      dateDiff: parseInt(daySelected.diff(moment().startOf('day'), 'days') * -1, 10)
+      dateDiff1: parseInt(daySelected.diff(moment().startOf('day'), 'days') * -1, 10)
+    });
+  }
+  _handleChage2(date) {
+    var daySelected = moment(date);
+    this.setState({
+      startDate: daySelected,
+      dateDiff2: parseInt(daySelected.diff(moment().startOf('day'), 'days') * -1, 10)
     });
   }
 
   render() {
     console.log(this.state.startDate.fromNow());
-    return (
-      <div className="App">
+    return (<div className="App">
         <AppBar />
-        <div className="DatePicker">
+        <div className="DatePicker1">
           <MuiThemeProvider>
             <DatePicker handleChange={this._handleChage.bind(this)}/>
           </MuiThemeProvider>
+          <div>
+            <h2 className="DayCount">
+              {this.state.dateDiff1} Days
+            </h2>
+            <h3>
+              <VisualizeDays dateDifference={this.state.dateDiff1}/>
+            </h3>
+          </div>
         </div>
-        <div>
-          <h2 className="DayCount">
-            {this.state.dateDiff} Days
-          </h2>
-          <h3>
-            <VisualizeDays dateDifference={this.state.dateDiff}/>
-          </h3>
+        <div className="DatePicker2">
+          <MuiThemeProvider>
+            <DatePicker handleChange={this._handleChage2.bind(this)}/>
+          </MuiThemeProvider>
+          <div>
+            <h2 className="DayCount">
+              {this.state.dateDiff2} Days
+            </h2>
+            <h3>
+              <VisualizeDays dateDifference={this.state.dateDiff2}/>
+            </h3>
+          </div>
         </div>
-      </div>
+    </div>
     );
   }
 }

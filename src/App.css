@@ -6,3 +6,13 @@
   margin-top: 2em;
   color: #00BCD5;
 }
+
+.DatePicker1 {
+  width: 50%;
+  float: left;
+}
+
+.DatePicker2 {
+  width: 50%;
+  float: right;;
+}
