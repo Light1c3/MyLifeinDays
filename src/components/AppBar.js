@@ -6,13 +6,12 @@ import MenuItem from 'material-ui/MenuItem';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-var Style =
-{
-  palette:
-    {
-      primary1Color: '#00BCD5',
-    }
-};
+const muiTheme = getMuiTheme({
+  toggle: {
+    thumbOnColor: '#32DD9C',
+    trackOnColor: '#1ca872'
+  }
+});
 
 class AppBarComp extends React.Component {
 
@@ -24,7 +23,7 @@ class AppBarComp extends React.Component {
   }
 
   getChildContext() {
-    return {muiTheme: getMuiTheme(Style)};
+    return {muiTheme: getMuiTheme()};
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
@@ -32,7 +31,7 @@ class AppBarComp extends React.Component {
   handleClose = () => this.setState({open: false});
 
   render() {
-    return <MuiThemeProvider muiTheme={getMuiTheme()}>
+    return <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <AppBar
           onLeftIconButtonTouchTap={this.handleToggle}
