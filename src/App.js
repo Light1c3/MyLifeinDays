@@ -16,6 +16,7 @@ class App extends Component {
     super();
     this.state = {
       startDate: moment(),
+      compareStatus: false,
       dateDiff1: 0,
       dateDiff2: 0
     };
@@ -36,10 +37,16 @@ class App extends Component {
     });
   }
 
-  render() {
-    console.log(this.state.startDate.fromNow());
-    return (<div className="App">
-        <AppBar />
+  _handleToggleViewChange() {
+    this.setState({
+      compareStatus: !this.state.compareStatus
+    })
+    console.log(this.state.compareStatus);
+  }
+
+  displayDatePicker() {
+    if (this.state.compareStatus) {
+      return <div>
         <div className="DatePicker1">
           <MuiThemeProvider>
             <DatePicker handleChange={this._handleChage.bind(this)}/>
@@ -66,6 +73,30 @@ class App extends Component {
             </h3>
           </div>
         </div>
+      </div>
+    } else {
+      return <div>
+        <div>
+          <MuiThemeProvider>
+            <DatePicker handleChange={this._handleChage.bind(this)}/>
+          </MuiThemeProvider>
+          <div>
+            <h2 className="DayCount">
+              {this.state.dateDiff1} Days
+            </h2>
+            <h3>
+              <VisualizeDays dateDifference={this.state.dateDiff1}/>
+            </h3>
+          </div>
+        </div>
+      </div>
+    }
+  }
+  render() {
+    console.log(this.state.startDate.fromNow());
+    return (<div className="App">
+        <AppBar toggleStatus={this.state.compareStatus} toggleView={this._handleToggleViewChange.bind(this)}/>
+        {this.displayDatePicker()}
     </div>
     );
   }

@@ -8,8 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const muiTheme = getMuiTheme({
   toggle: {
-    thumbOnColor: '#32DD9C',
-    trackOnColor: '#1ca872'
+    thumbOnColor: '#ffffff',
+    trackOnColor: '#32DD9C'
   }
 });
 
@@ -27,7 +27,6 @@ class AppBarComp extends React.Component {
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
-
   handleClose = () => this.setState({open: false});
 
   render() {
@@ -38,6 +37,7 @@ class AppBarComp extends React.Component {
           title="Time Visualizer"
           iconElementRight={
             <Toggle
+              onToggle={this.props.toggleView}
               labelStyle={{color:'white'}}
               style={{marginTop:'.75em'}}
               label="Compare"
