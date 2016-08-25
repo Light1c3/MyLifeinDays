@@ -38,7 +38,7 @@ To get a devolyable build, use `npm run build` which will create a build folder 
 
 ## Built With
 
-*Material-UI - A great resource for React components with Material Design in mind.
+* Material-UI - A great resource for React components with Material Design in mind.
 * React.JS - Facebook's Javascript Library for front-end web development.
 * Atom - A text editor designed and maintain by the people at Github.
 
