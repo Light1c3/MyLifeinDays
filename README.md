@@ -44,7 +44,7 @@ To get a devolyable build, use `npm run build` which will create a build folder 
 
 ## Authors
 
-* **Elad Karni** - *Developer* - [Light1c3](https://github.com/Light1c3)
+* **[Light1c3](https://github.com/Light1c3)** - *Developer*
 
 ## License
 
