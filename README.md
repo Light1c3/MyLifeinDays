@@ -41,11 +41,9 @@ To get a devolyable build, use `npm run build` which will create a build folder 
 * React.JS - Facebook's Javascript Library for front-end web development.
 * Atom - A text editor designed and maintain by the people at Github.
 
-## Versioning
-
 ## Authors
 
-* **Elad Karni** - *Initial work* - [PurpleBooth](https://github.com/Light1c3)
+* **Elad Karni** - *Initial work* - [Light1c3](https://github.com/Light1c3)
 
 ## License
 
