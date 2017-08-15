@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 You'll need to get Node.Js & NPM before you can start working with this project. I would also recommened nvm, for easier npm version control. You can get nvm here: https://github.com/creationix/nvm
 
-This project is a simple React webapp using ES6 that is a great place to mess around and learn. I tried stick to the best practices as I possibly could, but I'm not perfect so I apologies if I missed anything.
+This project is a simple React webapp using ES6 that is a great place to mess around and learn. I stuck to best practices as much as I possibly could, but I'm not perfect so I apologies if I missed anything.
 
 ### Installing
 
